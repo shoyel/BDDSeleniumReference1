@@ -1,5 +1,6 @@
 package com.shiftedtech.qa.steps;
 
+import com.shiftedtech.qa.framework.hook.StepBase;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 

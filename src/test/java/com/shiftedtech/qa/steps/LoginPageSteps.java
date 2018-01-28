@@ -1,25 +1,15 @@
 package com.shiftedtech.qa.steps;
 
-import com.google.common.base.Function;
-import cucumber.api.PendingException;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
+import com.shiftedtech.qa.framework.hook.StepBase;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ShiftTeacher on 1/20/2018.
  */
-public class LoginPageSteps extends StepBase{
+public class LoginPageSteps extends StepBase {
 
     @Then("^Browser display Login page$")
     public void browser_display_Login_page() throws Throwable {

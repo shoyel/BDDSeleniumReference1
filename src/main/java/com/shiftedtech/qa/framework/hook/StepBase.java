@@ -1,4 +1,4 @@
-package com.shiftedtech.qa.steps;
+package com.shiftedtech.qa.framework.hook;
 
 import com.google.common.base.Function;
 import com.shiftedtech.qa.framework.pages.HomePage;

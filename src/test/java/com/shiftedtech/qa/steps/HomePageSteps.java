@@ -1,16 +1,13 @@
 package com.shiftedtech.qa.steps;
 
-import com.shiftedtech.qa.framework.pages.HomePage;
+import com.shiftedtech.qa.framework.hook.StepBase;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 /**
  * Created by ShiftTeacher on 1/21/2018.
  */
-public class HomePageSteps extends StepBase{
+public class HomePageSteps extends StepBase {
     //protected HomePage homePage = new HomePage();
 
     @Then("^Spree home|Home page should display$")

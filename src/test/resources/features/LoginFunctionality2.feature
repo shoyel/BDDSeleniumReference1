@@ -1,4 +1,4 @@
-Feature: Spree login functionality
+Feature: Spree login functionality 2
   Background:
     Given Not a validated user
     When User browse to the site
@@ -6,7 +6,6 @@ Feature: Spree login functionality
     When User click login link
     Then Browser display Login page
 
-  @smoke
   Scenario: 1.Valid user with valid password
     # This is a comment
     When User enter user email as "shiftqa1@gmail.com"
@@ -15,8 +14,6 @@ Feature: Spree login functionality
     Then Home page should display
     And Login success message display
 
-  @debug
-  @smoke
   Scenario: 2.Valid user with valid password - Admin
     When User enter user email as "hema0ahmad@gmail.com"
     And User enter password as "hema123"
