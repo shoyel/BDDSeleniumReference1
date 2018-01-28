@@ -27,6 +27,7 @@ public class BeforeAfterHook extends StepBase{
         //driver.close();
         //driver.quit();
         DriverFactory.getInstance().removeDriver();
+        homePage = null;
     }
 
 }
