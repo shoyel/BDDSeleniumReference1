@@ -1,11 +1,8 @@
-package com.shiftedtech.qa.framework.hook;
+package com.shiftedtech.qa.framework.steps.hook;
 
 import com.shiftedtech.qa.framework.utils.DriverFactory;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 

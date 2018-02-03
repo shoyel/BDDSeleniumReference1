@@ -69,6 +69,21 @@
             <artifactId>cucumber-junit</artifactId>
             <version>1.2.5</version>
         </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>3.14.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -88,11 +103,48 @@
                 <version>2.20.1</version>
 
                 <configuration>
+
+                    <!-- JUnit Cucumber Runner -->
                     <includes>
-                        <include>**/BDDRunner.java</include>
+                        <include>**/BDDRunnerJUnit.java</include>
+                    </includes>
+
+                    <!-- TestNG Functional Test Runner -->
+                    <!--
+                    <includes>
                         <include>**/SpreeLoginTestNg.java</include>
                     </includes>
+                    -->
+
+                    <!-- TestNG suite runner -->
+                    <!--
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    -->
+
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>3.8.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>BDDSeleniumReference</projectName>  <!-- Replace with project name -->
+                            <outputDirectory>target/cucumber-test-report/advanced-reports</outputDirectory>
+                            <cucumberOutput>target/cucumber-test-report/cucumber-report.json</cucumberOutput>
+                            <buildNumber>1</buildNumber>
+                            <parallelTesting>false</parallelTesting>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

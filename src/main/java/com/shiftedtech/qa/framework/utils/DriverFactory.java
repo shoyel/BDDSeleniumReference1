@@ -1,8 +1,10 @@
 package com.shiftedtech.qa.framework.utils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by ShiftTeacher on 1/21/2018.
@@ -18,6 +20,23 @@ public class DriverFactory {
     {
         if(instance == null){
             instance = new DriverFactory();
+        }
+        return instance;
+    }
+    public static DriverFactory getInstance(String browserName)
+    {
+        if(instance == null){
+            instance = new DriverFactory();
+        }
+
+        FirefoxDriverManager.getInstance().setup();
+        ChromeDriverManager.getInstance().setup();
+
+        if(browserName.equalsIgnoreCase("chrome")){
+           instance.driver.set(new ChromeDriver());
+        }
+        else if(browserName.equalsIgnoreCase("firefox")){
+            instance.driver.set(new FirefoxDriver());
         }
         return instance;
     }

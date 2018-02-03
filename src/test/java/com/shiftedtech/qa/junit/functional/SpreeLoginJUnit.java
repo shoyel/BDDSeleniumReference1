@@ -1,16 +1,30 @@
-package com.shiftedtech.qa.testng;
+package com.shiftedtech.qa.junit.functional;
 
+import com.shiftedtech.qa.framework.scriptbase.SpreeScriptBaseJUnit;
 import com.shiftedtech.qa.framework.scriptbase.SpreeScriptBaseTestNg;
 import com.shiftedtech.qa.framework.utils.ExcelReader;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import com.tngtech.java.junit.dataprovider.DataProvider;
+import com.tngtech.java.junit.dataprovider.DataProviderRunner;
+import com.tngtech.java.junit.dataprovider.UseDataProvider;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
+
 
 /**
  * Created by ShiftTeacher on 1/7/2018.
  */
-public class SpreeLoginTestNg extends SpreeScriptBaseTestNg {
+@RunWith(DataProviderRunner.class)
+public class SpreeLoginJUnit extends SpreeScriptBaseJUnit {
 
-    @Test(dataProvider = "loginDataProviderAsExcelWithPOI")
+
+
+
+    @Test()
+    @UseDataProvider("loginDataProviderAsExcelWithPOI")
     public void verifySuccessfullLogin(String email, String password){
         homePage.verifyPageTitle("Spree Demo Site");
         homePage.navigateToLoginPage();

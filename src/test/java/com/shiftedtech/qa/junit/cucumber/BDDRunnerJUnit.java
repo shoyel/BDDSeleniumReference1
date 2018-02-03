@@ -1,4 +1,4 @@
-package com.shiftedtech.qa.runner;
+package com.shiftedtech.qa.junit.cucumber;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -18,15 +18,15 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         //tags = { "@debug" },
         //tags = { "@smoke" },         /* smoke test only */
-        //tags = { "@smoke,@debug" }, /* debug or smoke test */
+        tags = { "@smoke,@debug" }, /* debug or smoke test */
         //tags = { "@smoke","@debug" },  /* debug and smoke test */
         //monochrome = true,
         features = "src/test/resources/features/",
         //features = "src/test/resources/features/LoginFunctionality2.feature",
         //features = {"src/test/resources/features/LoginFunctionality2.feature",
         //            "src/test/resources/features/LoginFunctionality.feature"},
-        glue = {"com.shiftedtech.qa.framework.hook",
-                "com.shiftedtech.qa.steps"},
+        glue = {"com.shiftedtech.qa.framework.steps.hook",
+                "com.shiftedtech.qa.framework.steps"},
         //dryRun = true,
         plugin={
                 "pretty:target/cucumber-test-report/cucumber-pretty.txt",
@@ -35,5 +35,5 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber-test-report/test-report.xml"
         }
 )
-public class BDDRunner {
+public class BDDRunnerJUnit {
 }

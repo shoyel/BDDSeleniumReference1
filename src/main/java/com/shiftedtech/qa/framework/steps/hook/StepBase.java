@@ -1,15 +1,7 @@
-package com.shiftedtech.qa.framework.hook;
+package com.shiftedtech.qa.framework.steps.hook;
 
-import com.google.common.base.Function;
 import com.shiftedtech.qa.framework.pages.HomePage;
-import com.shiftedtech.qa.framework.utils.DriverFactory;
 import com.shiftedtech.qa.framework.utils.WebElementUtils;
-import cucumber.api.java.en.Given;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ShiftTeacher on 1/21/2018.
