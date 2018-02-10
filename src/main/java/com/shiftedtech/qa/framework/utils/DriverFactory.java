@@ -2,6 +2,7 @@ package com.shiftedtech.qa.framework.utils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,6 +21,7 @@ public class DriverFactory {
     public static final String USERNAME = "iftekharivaan2";
     public static final String AUTOMATE_KEY = "T8Qe6aWxTxjQRFGeztFV";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    public static final String LOCAL_GRID_URL = "http://10.10.20.70:4444/wd/hub";
 
 
     private DriverFactory() {
@@ -70,6 +72,35 @@ public class DriverFactory {
             caps.setCapability("resolution", "1920x1080");
             try {
                 instance.driver.set(new RemoteWebDriver(new URL(URL), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }else if(browserName.equalsIgnoreCase("grid_chrome_16")){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setPlatform(Platform.ANY);
+            caps.setBrowserName("chrome");
+            try {
+                instance.driver.set(new RemoteWebDriver(new URL(LOCAL_GRID_URL), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(browserName.equalsIgnoreCase("grid_firefox_16")){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setPlatform(Platform.ANY);
+            caps.setBrowserName("firefox");
+            try {
+                instance.driver.set(new RemoteWebDriver(new URL(LOCAL_GRID_URL), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(browserName.equalsIgnoreCase("grid_ie_16")){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setPlatform(Platform.ANY);
+            caps.setBrowserName("internet explorer");
+            try {
+                instance.driver.set(new RemoteWebDriver(new URL(LOCAL_GRID_URL), caps));
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }

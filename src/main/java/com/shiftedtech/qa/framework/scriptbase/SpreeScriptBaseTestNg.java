@@ -23,7 +23,7 @@ public class SpreeScriptBaseTestNg {
 
     @BeforeMethod
     @Parameters({"browserName"})
-    public void beforeMethod(@Optional(value = "chrome") String browserName) throws Exception {
+    public void beforeMethod(@Optional(value = "grid_firefox_16") String browserName) throws Exception {
         driver = DriverFactory.getInstance(browserName).getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
