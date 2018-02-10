@@ -5,12 +5,22 @@ import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by ShiftTeacher on 1/21/2018.
  */
 public class DriverFactory {
     private static DriverFactory instance = null;
+
+    public static final String USERNAME = "iftekharivaan2";
+    public static final String AUTOMATE_KEY = "T8Qe6aWxTxjQRFGeztFV";
+    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
 
     private DriverFactory() {
         //Do-nothing..Do not allow to initialize this class from outside
@@ -29,14 +39,40 @@ public class DriverFactory {
             instance = new DriverFactory();
         }
 
-        FirefoxDriverManager.getInstance().setup();
-        ChromeDriverManager.getInstance().setup();
-
         if(browserName.equalsIgnoreCase("chrome")){
-           instance.driver.set(new ChromeDriver());
+            ChromeDriverManager.getInstance().setup();
+            instance.driver.set(new ChromeDriver());
         }
         else if(browserName.equalsIgnoreCase("firefox")){
+            FirefoxDriverManager.getInstance().setup();
             instance.driver.set(new FirefoxDriver());
+        }
+        else if(browserName.equalsIgnoreCase("cloud_chrome_64")){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("browser", "Chrome");
+            caps.setCapability("browser_version", "64.0");
+            caps.setCapability("os", "Windows");
+            caps.setCapability("os_version", "7");
+            caps.setCapability("resolution", "1920x1080");
+
+            try {
+                instance.driver.set(new RemoteWebDriver(new URL(URL), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(browserName.equalsIgnoreCase("cloud_ie_11")){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("browser", "IE");
+            caps.setCapability("browser_version", "11.0");
+            caps.setCapability("os", "Windows");
+            caps.setCapability("os_version", "7");
+            caps.setCapability("resolution", "1920x1080");
+            try {
+                instance.driver.set(new RemoteWebDriver(new URL(URL), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
         return instance;
     }
@@ -48,23 +84,8 @@ public class DriverFactory {
         {
             ChromeDriverManager.getInstance().setup();
             return new ChromeDriver();
-            /*
-                DesiredCapabilities caps = DesiredCapabilities.chrome();
-                caps.setCapability("browser", "Chrome");
-                caps.setCapability("browser_version", "58.0");
-                caps.setCapability("os", "Windows");
-                caps.setCapability("os_version", "7");
-                caps.setCapability("resolution", "1920x1080");
-                try {
-                    return new RemoteWebDriver(new URL(REMOTE_URL), caps);
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
-            */
-            //return null;
         }
     };
-
     public WebDriver getDriver() // call this method to get the driver object and launch the browser
     {
         return driver.get();

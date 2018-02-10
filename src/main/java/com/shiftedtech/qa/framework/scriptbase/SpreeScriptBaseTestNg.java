@@ -7,9 +7,7 @@ import com.shiftedtech.qa.framework.utils.WebElementUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,16 +21,10 @@ public class SpreeScriptBaseTestNg {
     protected LoginPage loginPage;
 
 
-    @BeforeClass
-    public void beforeClass() throws Exception {
-
-    }
-
     @BeforeMethod
-    public void beforeMethod() throws Exception {
-
-        driver = DriverFactory.getInstance().getDriver();
-
+    @Parameters({"browserName"})
+    public void beforeMethod(@Optional(value = "chrome") String browserName) throws Exception {
+        driver = DriverFactory.getInstance(browserName).getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(10,TimeUnit.SECONDS);
@@ -40,14 +32,11 @@ public class SpreeScriptBaseTestNg {
         webElementUtils = new WebElementUtils();
         homePage = new HomePage();
         loginPage = new LoginPage();
-
         driver.navigate().to("http://spree.shiftedtech.com");
-
     }
 
     @AfterMethod
     public void afterMethod(){
-
         webElementUtils = null;
         homePage = null;
         loginPage = null;
@@ -55,7 +44,6 @@ public class SpreeScriptBaseTestNg {
     }
 
     public void delayFor(int timeInMili){
-        //spree.getUtils().delayFor(timeInMili);
         homePage.delayFor(timeInMili);
     }
 

@@ -64,7 +64,9 @@ public class SpreeScriptBaseJUnit {
     public static Collection<Object[]> browsers(){
         return Arrays.asList(new Object[][]{
                 {"chrome"},
-                {"firefox"}
+                {"firefox"},
+                {"cloud_chrome_64"},
+                {"cloud_ie_11"}
         });
     }
 }

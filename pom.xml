@@ -103,10 +103,13 @@
                 <version>2.20.1</version>
 
                 <configuration>
-
                     <!-- JUnit Cucumber Runner -->
                     <includes>
+                        <!--
                         <include>**/BDDRunnerJUnit.java</include>
+                        -->
+                        <include>**/SpreeLoginFunctionalityJUnit.java</include>
+                        <include>**/SpreeLoginJUnit.java</include>
                     </includes>
 
                     <!-- TestNG Functional Test Runner -->

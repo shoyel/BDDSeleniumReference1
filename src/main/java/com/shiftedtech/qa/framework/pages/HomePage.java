@@ -14,6 +14,8 @@ public class HomePage extends PageBase {
 
     @FindBy(how= How.LINK_TEXT, using= "Login" )
     private WebElement loginLink;
+    @FindBy(how= How.LINK_TEXT, using= "Logout" )
+    private WebElement logoutLink;
     @FindBy(xpath = "//div[@id='content']/div[contains(@class,'alert-success')]")
     private WebElement successMsg;
 
@@ -24,6 +26,10 @@ public class HomePage extends PageBase {
 
     public void navigateToLoginPage(){
         loginLink.click();
+    }
+
+    public void logOut(){
+        logoutLink.click();
     }
 
     public void verifyPageTitle() {
