@@ -127,6 +127,13 @@
                     -->
 
                     <!-- TestNG suite runner -->
+                    <!--
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    -->
+
+                    <!-- TestNG suite runner from command line -->
 
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
