@@ -16,7 +16,7 @@
         <cucumber.version>1.2.5</cucumber.version>
         <testng.version>6.11</testng.version>
         <poi.version>3.10-FINAL</poi.version>
-        <suiteXmlFile>firefox-test.xml</suiteXmlFile>
+        <suiteXmlFile>firefox-grid-test.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
