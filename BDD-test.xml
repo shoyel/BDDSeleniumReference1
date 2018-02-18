@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="BDD Test Suite" parallel="tests" thread-count="5">
-    <test name="BDD Suite">
-        <parameter name="browserName" value="cloud_chrome_64" junit="true"/>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="BDD Test Suite">
+    <test name="BDD Suite" junit="true">
         <classes>
             <class name="com.shiftedtech.qa.junit.cucumber.BDDRunnerJUnit"/>
         </classes>
