@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class SeleniumUtils {
     public static final int DEFAULT_WAIT_TIME = 10;
 
-    protected WebDriver driver = DriverFactory.getInstance().getDriver();
+    protected WebDriver driver = DriverFactory.getInstance("grid_chrome_16").getDriver();
 
 
     public SeleniumUtils(){
