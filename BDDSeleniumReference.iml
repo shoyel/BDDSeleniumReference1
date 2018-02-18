@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -109,5 +109,14 @@
     <orderEntry type="library" name="Maven: org.apache.maven:maven-repository-metadata:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-sec-dispatcher:1.4" level="project" />
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-junit47:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:common-junit48:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:common-junit4:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:common-junit3:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:common-java5:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-shared-utils:0.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-grouper:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-api:2.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:2.20.1" level="project" />
   </component>
 </module>
