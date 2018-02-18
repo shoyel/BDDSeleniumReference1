@@ -64,6 +64,19 @@ public class DriverFactory {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
+        } else if(browserName.equalsIgnoreCase("cloud_firefox_64")){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("browser", "Firefox");
+            caps.setCapability("browser_version", "64.0");
+            caps.setCapability("os", "Windows");
+            caps.setCapability("os_version", "7");
+            caps.setCapability("resolution", "1920x1080");
+
+            try {
+                instance.driver.set(new RemoteWebDriver(new URL(URL), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
         else if(browserName.equalsIgnoreCase("cloud_ie_11")){
             DesiredCapabilities caps = new DesiredCapabilities();

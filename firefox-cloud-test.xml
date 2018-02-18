@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="My Test Suite" parallel="tests" thread-count="5">
+    <test name="Firefox">
+        <parameter name="browserName" value="cloud_firefox_64"/>
+        <classes>
+            <class name="com.shiftedtech.qa.testng.functional.SpreeLoginFunctionalityTestNg"/>
+        </classes>
+    </test>
+</suite>
