@@ -16,6 +16,7 @@
         <cucumber.version>1.2.5</cucumber.version>
         <testng.version>6.11</testng.version>
         <poi.version>3.10-FINAL</poi.version>
+        <suiteXmlFile>firefox-test.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -104,13 +105,19 @@
 
                 <configuration>
                     <!-- JUnit Cucumber Runner -->
+                    <!--
                     <includes>
-                        <!--
                         <include>**/BDDRunnerJUnit.java</include>
-                        -->
+                    </includes>
+                    -->
+
+                    <!-- JUnit  Runner -->
+                    <!--
+                    <includes>
                         <include>**/SpreeLoginFunctionalityJUnit.java</include>
                         <include>**/SpreeLoginJUnit.java</include>
                     </includes>
+                    -->
 
                     <!-- TestNG Functional Test Runner -->
                     <!--
@@ -120,11 +127,11 @@
                     -->
 
                     <!-- TestNG suite runner -->
-                    <!--
+
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
-                    -->
+
 
                 </configuration>
             </plugin>

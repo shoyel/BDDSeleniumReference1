@@ -37,6 +37,8 @@ public class DriverFactory {
     }
     public static DriverFactory getInstance(String browserName)
     {
+        System.out.println("Running browser: " + browserName);
+
         if(instance == null){
             instance = new DriverFactory();
         }
