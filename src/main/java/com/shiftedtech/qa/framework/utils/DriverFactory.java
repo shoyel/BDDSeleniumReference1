@@ -89,7 +89,7 @@ public class DriverFactory {
         }
         else if(browserName.equalsIgnoreCase("grid_firefox_16")){
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setPlatform(Platform.ANY);
+            caps.setPlatform(Platform.WINDOWS);
             caps.setBrowserName("firefox");
             try {
                 instance.driver.set(new RemoteWebDriver(new URL(LOCAL_GRID_URL), caps));
