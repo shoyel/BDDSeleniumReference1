@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="BDD Test Suite">
-    <test name="BDD Suite" junit="true">
-        <classes>
-            <class name="com.shiftedtech.qa.junit.cucumber.BDDRunnerJUnit"/>
-        </classes>
-    </test>
-</suite>
